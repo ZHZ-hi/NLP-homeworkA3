@@ -19,8 +19,10 @@ streamlit run app.py
 1. Push this folder to a GitHub repository.
 2. In Streamlit Cloud, create a new app from that repository.
 3. Set the main file path to `app.py`.
-4. Keep Python at `3.11` as specified in `runtime.txt`.
+4. In Advanced settings, select Python `3.12` if the option is shown.
 5. Deploy.
+
+`environment.yml` also pins the deployment environment to Python 3.12. This matters because SciPy/Gensim wheels may be unavailable for the newest Python versions immediately after release.
 
 The GloVe module downloads a pre-trained model on first use. By default it uses `glove-twitter-25` to keep Streamlit Cloud startup reliable. For better analogy quality, add an environment variable in Streamlit Cloud:
 
